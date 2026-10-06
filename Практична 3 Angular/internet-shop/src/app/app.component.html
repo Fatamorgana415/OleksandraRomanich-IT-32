@@ -1,0 +1,12 @@
+<app-header [title]="shopName"></app-header>
+
+<div class="cart-message" *ngIf="cartMessage">
+  {{ cartMessage }}
+</div>
+
+<app-products
+  [products]="products"
+  (productAdded)="onProductAdded($event)">
+</app-products>
+
+<app-footer></app-footer>

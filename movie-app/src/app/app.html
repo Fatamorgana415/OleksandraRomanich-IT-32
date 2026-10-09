@@ -1,0 +1,22 @@
+<h1>Каталог фільмів</h1>
+
+<h2>Додати фільм</h2>
+
+<div>
+  <input [(ngModel)]="title" placeholder="Назва" />
+  <input [(ngModel)]="year" type="number" placeholder="Рік" />
+  <input [(ngModel)]="rating" type="number" placeholder="Рейтинг" />
+  <button (click)="add()">Додати фільм</button>
+</div>
+
+<hr />
+
+<h2>Список фільмів</h2>
+
+<div *ngFor="let movie of movieService.getMovies()()">
+  <h3>{{ movie.title }}</h3>
+  <p>Рік: {{ movie.year }}</p>
+  <p>Рейтинг: {{ movie.rating }}</p>
+  <button (click)="remove(movie.id)">Видалити</button>
+  <hr />
+</div>

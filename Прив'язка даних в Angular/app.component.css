@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #76d696;
+}
+
+h2 {
+  color: #4dc949;
+  border-bottom: 2px solid #e2e8f000;
+  padding-bottom: 8px;
+}
+
+.counter {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e381bc;
+}
+
+.form-section {
+  padding: 20px;
+  margin-bottom: 25px;
+  background-color: #38b120;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #e864cc;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #168c0b;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: #4fd27f;
+}
+
+.add-button:hover {
+  background-color: #a935b5;
+}
+
+.add-button:disabled {
+  background-color: #720b50;
+  cursor: not-allowed;
+}
+
+.student-card {
+  position: relative;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 8px solid;
+}
+
+.student-card h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.student-card p {
+  margin: 8px 0;
+}
+
+.high-grade {
+  background-color: #dcfce7;
+  border-left-color: #16a34a;
+}
+
+.middle-grade {
+  background-color: #fef9c3;
+  border-left-color: #ca8a04;
+}
+
+.low-grade {
+  background-color: #fee2e2;
+  border-left-color: #dc2626;
+}
+
+.excellent {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.good {
+  color: #a16207;
+  font-weight: bold;
+}
+
+.weak {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.delete-button {
+  background-color: #dc2626;
+}
+
+.delete-button:hover {
+  background-color: #b91c1c;
+}
+
+.empty-message {
+  padding: 20px;
+  text-align: center;
+  color: #a7bbd8;
+  font-style: italic;
+}

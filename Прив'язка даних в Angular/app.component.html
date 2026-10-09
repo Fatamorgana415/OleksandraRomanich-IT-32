@@ -1,0 +1,93 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <p class="counter">
+    Всього студентів: {{ students.length }}
+  </p>
+  <section class="form-section">
+    <h2>Додати студента</h2>
+
+    <div class="form-group">
+      <label for="name">Ім'я студента:</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="newStudent.name"
+        placeholder="Введіть ім'я"
+      />
+    </div>
+    <div class="form-group">
+      <label for="age">Вік:</label>
+      <input
+        id="age"
+        type="number"
+        [(ngModel)]="newStudent.age"
+        min="1"
+        placeholder="Введіть вік"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="grade">Середня оцінка:</label>
+      <input
+        id="grade"
+        type="number"
+        [(ngModel)]="newStudent.grade"
+        min="1"
+        max="12"
+        placeholder="Введіть оцінку"
+      />
+    </div>
+
+    <button
+      class="add-button"
+      (click)="addStudent()"
+      [disabled]="
+        newStudent.name.trim() === '' ||
+        newStudent.age <= 0 ||
+        newStudent.grade < 1 ||
+        newStudent.grade > 12
+      "
+    >
+      Додати студента
+    </button>
+  </section>
+
+  <section class="students-section">
+    <h2>Список студентів</h2>
+
+    <p *ngIf="students.length === 0" class="empty-message">
+      Список студентів порожній.
+    </p>
+
+    <div
+      *ngFor="let student of students; let i = index"
+      class="student-card"
+      [ngClass]="getGradeClass(student.grade)"
+    >
+      <h3>{{ student.name }}</h3>
+
+      <p>Вік: {{ student.age }}</p>
+
+      <p>Середня оцінка: {{ student.grade }}</p>
+
+      <p *ngIf="student.grade >= 10" class="excellent">
+        Відмінний результат
+      </p>
+
+      <p *ngIf="student.grade >= 7 && student.grade < 10" class="good">
+        Середній результат
+      </p>
+
+      <p *ngIf="student.grade < 7" class="weak">
+        Потрібно покращити результат
+      </p>
+
+      <button
+        class="delete-button"
+        (click)="deleteStudent(i)"
+      >
+        Видалити
+      </button>
+    </div>
+  </section>
+</div>

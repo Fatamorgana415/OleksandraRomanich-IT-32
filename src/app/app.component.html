@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="container header-inner">
+    <h1 class="logo">🎬 {{ title }}</h1>
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Головна</a>
+      <a routerLink="/movies" routerLinkActive="active">Фільми</a>
+      <a routerLink="/about" routerLinkActive="active">Про сайт</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Каталог фільмів. Навчальний проєкт.</p>
+  </div>
+</footer>

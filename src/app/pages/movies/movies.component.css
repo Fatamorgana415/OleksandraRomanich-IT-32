@@ -1,0 +1,44 @@
+.movies {
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #1a1f2e;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.movie-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1a1f2e;
+}
+
+.movie-year {
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.movie-link {
+  font-weight: 600;
+  color: #1976d2;
+}

@@ -1,0 +1,27 @@
+@"
+# Dependencies
+/node_modules
+
+# Build
+/dist
+/out-tsc
+
+# Angular cache
+.angular/
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+"@ | Out-File -FilePath .gitignore -Encoding utf8

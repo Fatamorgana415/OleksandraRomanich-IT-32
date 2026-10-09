@@ -1,0 +1,19 @@
+.about {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 26px;
+  margin-bottom: 16px;
+  color: #1a1f2e;
+}
+
+.text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 12px;
+}

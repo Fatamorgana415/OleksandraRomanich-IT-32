@@ -1,0 +1,13 @@
+<section class="movies">
+  <h2 class="title">Список фільмів</h2>
+
+  <div class="movie-list">
+    <div class="movie-card" *ngFor="let movie of movies">
+      <h3 class="movie-title">{{ movie.title }}</h3>
+      <p class="movie-year">Рік: {{ movie.year }}</p>
+      <a class="movie-link" [routerLink]="['/movie', movie.id]">
+        Переглянути деталі
+      </a>
+    </div>
+  </div>
+</section>

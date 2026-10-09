@@ -1,0 +1,14 @@
+<section class="detail">
+  <ng-container *ngIf="movie; else notFound">
+    <h2 class="title">{{ movie.title }}</h2>
+    <p class="info">Рік: {{ movie.year }}</p>
+    <p class="info">Рейтинг: {{ movie.rating }}/10</p>
+
+    <a routerLink="/movies" class="back-link">← Назад до списку</a>
+  </ng-container>
+
+  <ng-template #notFound>
+    <h2 class="not-found">Фільм не знайдено</h2>
+    <a routerLink="/movies" class="back-link">← Назад до списку</a>
+  </ng-template>
+</section>

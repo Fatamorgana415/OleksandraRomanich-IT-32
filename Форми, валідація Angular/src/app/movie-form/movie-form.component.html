@@ -1,0 +1,94 @@
+<h2>Додати фільм</h2>
+
+<form #itemForm="ngForm" (ngSubmit)="addItem(itemForm)">
+
+  <!-- Назва фільму -->
+  <div>
+    <label>Назва фільму:</label>
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="newItem.title"
+      required
+      minlength="3"
+      maxlength="50"
+      #titleRef="ngModel"
+    />
+
+    <div *ngIf="submitted && titleRef.invalid">
+      <small *ngIf="titleRef.errors?.['required']">
+        Введіть назву фільму
+      </small>
+      <small *ngIf="titleRef.errors?.['minlength']">
+        Назва повинна містити мінімум 3 символи
+      </small>
+      <small *ngIf="titleRef.errors?.['maxlength']">
+        Назва повинна містити максимум 50 символів
+      </small>
+    </div>
+  </div>
+
+  <!-- Режисер -->
+  <div>
+    <label>Режисер:</label>
+    <input
+      type="text"
+      name="director"
+      [(ngModel)]="newItem.director"
+      required
+      minlength="3"
+      maxlength="40"
+      #directorRef="ngModel"
+    />
+
+    <div *ngIf="submitted && directorRef.invalid">
+      <small *ngIf="directorRef.errors?.['required']">
+        Вкажіть режисера
+      </small>
+      <small *ngIf="directorRef.errors?.['minlength']">
+        Ім'я режисера повинно містити мінімум 3 символи
+      </small>
+      <small *ngIf="directorRef.errors?.['maxlength']">
+        Ім'я режисера повинно містити максимум 40 символів
+      </small>
+    </div>
+  </div>
+
+  <!-- Опис -->
+  <div>
+    <label>Опис:</label>
+    <textarea
+      name="description"
+      [(ngModel)]="newItem.description"
+      required
+      minlength="10"
+      maxlength="200"
+      #descriptionRef="ngModel"
+    ></textarea>
+
+    <div *ngIf="submitted && descriptionRef.invalid">
+      <small *ngIf="descriptionRef.errors?.['required']">
+        Опис обов'язковий
+      </small>
+      <small *ngIf="descriptionRef.errors?.['minlength']">
+        Опис повинен містити мінімум 10 символів
+      </small>
+      <small *ngIf="descriptionRef.errors?.['maxlength']">
+        Опис повинен містити максимум 200 символів
+      </small>
+    </div>
+  </div>
+
+  <button type="submit">Додати фільм</button>
+</form>
+
+<hr />
+
+<h3>Список фільмів:</h3>
+
+<div *ngFor="let movie of movies">
+  <p><b>{{ movie.title }}</b></p>
+  <p>Режисер: {{ movie.director }}</p>
+  <p>Опис: {{ movie.description }}</p>
+  <hr />
+</div>
